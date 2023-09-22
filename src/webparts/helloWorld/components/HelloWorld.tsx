@@ -7,11 +7,17 @@ export default class HelloWorld extends React.Component<IHelloWorldProps, {}> {
   public render(): React.ReactElement<IHelloWorldProps> {
     const {
       description,
+      test,
+      test1,
+      test2,
+      test3,
       isDarkTheme,
       environmentMessage,
       hasTeamsContext,
       userDisplayName
     } = this.props;
+
+    console.log(this.props);
 
     return (
       <section className={`${styles.helloWorld} ${hasTeamsContext ? styles.teams : ''}`}>
@@ -20,6 +26,11 @@ export default class HelloWorld extends React.Component<IHelloWorldProps, {}> {
           <h2>Well done, {escape(userDisplayName)}!</h2>
           <div>{environmentMessage}</div>
           <div>Web part property value: <strong>{escape(description)}</strong></div>
+          <p>This is a test</p>
+          <p>${escape(test)}</p>
+          <p>${test1}</p>
+          <p>${escape(test2)}</p>
+          <p>${test3}</p>
         </div>
         <div>
           <h3>Welcome to SharePoint Framework!</h3>
